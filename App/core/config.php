@@ -15,9 +15,9 @@ class Config {
 	
 	//development values
 	const local_host	= 'localhost';
-	const local_user	= 'usb';
-	const local_pass	= 'asdf123';
-	const local_name	= 'esdb';
+	const local_user	= 'username';
+	const local_pass	= 'password';
+	const local_name	= 'database';
 	
-	const salt			= 's4ltYs4lTs4r3b3rryS4LtY';
+	const salt		= 's4ltYs4lTs4r3b3rryS4LtY';
 }
