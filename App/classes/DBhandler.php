@@ -3,8 +3,8 @@
 class DBhandler
 {
 	private $host= "Localhost";
-	private $user= "47278";
-	private $pass= "cis47278";
+	private $user= "usr";
+	private $pass= "pwd";
 	private $db; //db handler
 	private $st; //statement handler
 	protected $rs = array(); //return statement
