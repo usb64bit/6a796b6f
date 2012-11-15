@@ -120,18 +120,13 @@ class DBhandler
 		}
 		elseif($flag == DBhandler::INSERT)
 		{
-			$rv = '(' . implode(',',$ak) . ') VALUES (' . implode(',:', $ak) . ')';
+			$rv = '(' . implode(',',$ak) . ') VALUES (:' . implode(',:', $ak) . ')';
 		}
 		else
 		{
-			$values = array();
-			foreach($ak as $key)
-			{
-				$tmp = $key;
-				$values = ':'.$key;
-			}
-			$rv = 
+			throw new Exception('array_keys function flag is not set',500);
 		}
+		return $rv;
 	}
 
 	public function asdf()
