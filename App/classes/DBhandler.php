@@ -2,6 +2,8 @@
 
 class DBhandler
 {
+	const INSERT = 1;
+	const UPDATE = 2;
 	private $host= "Localhost";
 	private $user= "usr";
 	private $pass= "pwd";
@@ -103,6 +105,35 @@ class DBhandler
 			$this->db = new PDO('mysql:host=localhost;dbname=47278', 'root', '');
 	}
 	
+	public function array_keys($data, $flag=0)
+	{
+		$rv = ''; //return value
+		$tmp = array(); //tmp array
+		$ak = array_keys($data); // array keys of data
+		if($flag == DBhandler::UPDATE)
+		{
+			foreach($ak as $key)
+			{
+				$tmp = $key.'=:'.$key;
+			}
+			$rv = implode(',',$tmp);
+		}
+		elseif($flag == DBhandler::INSERT)
+		{
+			$rv = '(' . implode(',',$ak) . ') VALUES (' . implode(',:', $ak) . ')';
+		}
+		else
+		{
+			$values = array();
+			foreach($ak as $key)
+			{
+				$tmp = $key;
+				$values = ':'.$key;
+			}
+			$rv = 
+		}
+	}
+
 	public function asdf()
 	{
 		return $this->host;
